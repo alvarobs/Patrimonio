@@ -3,57 +3,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.alvarobs.inventariopat.InventariarActivity"
-    android:orientation="vertical"
 
     >
 
-    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Local"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Número de Patrimônio" />
+
+        <ImageButton
+            android:id="@+id/btnCapturarCodBarras"
+            android:layout_width="54dp"
+            android:layout_height="32dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cod_barras"
+             />
+
+    </LinearLayout>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/numPat"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/local"
-        />
+        android:inputType="number" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Local ID (Opcional)"/>
+        android:text="Descrição do Bem" />
 
     <EditText
+        android:id="@+id/descBem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/localID"
-        android:layout_gravity="center_vertical"
-        android:layout_weight="1" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnConcluirInventario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Concluir" />
+
+
+        <Button
+            android:id="@+id/btnAddBem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adicionar" />
+
+
+    </LinearLayout>
+
     <Button
+        android:id="@+id/btnTirarFoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Obter Coordenadas do GPS"
-        android:id="@+id/btnObterCoordenadasGPS"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Coordenadas GPS: "
-        android:id="@+id/LocalCoordenadasTV"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ver Local no Maps"
-        android:id="@+id/btnAbrirMaps"
-        />
-
+        android:text="Tirar Foto" />
 
 
 </LinearLayout>

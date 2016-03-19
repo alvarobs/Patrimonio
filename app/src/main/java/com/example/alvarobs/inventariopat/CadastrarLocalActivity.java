@@ -1,10 +1,14 @@
 package com.example.alvarobs.inventariopat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.location.LocationManager;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.alvarobs.inventariopat.VO.LocalVO;
 
@@ -33,5 +37,21 @@ public class CadastrarLocalActivity extends AppCompatActivity {
         result.setLocal(local);
         result.setIdLocal(localID);
         return result;
+    }
+
+    public void localizarGPS(View view) {
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        for(String provider : locationManager.getAllProviders()){
+            Toast.makeText(getApplicationContext(), provider, Toast.LENGTH_LONG).show();
+
+        }
+
+    }
+
+    public void abrirMaps(View view, String coordenadas) {
+        coordenadas="http://maps.google.com/maps?saddr=20.344,34.34&daddr=20.5666,45.345";
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(coordenadas));
+        startActivity(intent);
     }
 }

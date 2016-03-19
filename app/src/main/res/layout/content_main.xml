@@ -46,5 +46,8 @@
         android:onClick="concluirEnviar"
         />
 
-
-</LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/inventario_1"
+        /></LinearLayout>
